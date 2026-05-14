@@ -26,8 +26,12 @@ export async function getNotebyId(req,res) {
 
 export async function createNote(req,res){
     try{
-        const {title,content} = req.body
-        const note = new Note({title, content})
+        const {title,content, authorID} = req.body
+
+        if(!authorID){
+            return res.status(400).json({message: "Browser authID is required"})
+        }
+        const note = new Note({title, content,authorID})
 
         const savedNote = await note.save()
         res.status(201).json(savedNote)

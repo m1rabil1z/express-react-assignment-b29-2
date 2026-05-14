@@ -4,6 +4,7 @@ import toast from 'react-hot-toast'
 import { Link, useNavigate } from 'react-router'
 import axios from 'axios'
 import api from '../lib/axios'
+import { getorcreateUser } from '../utils/auth'
 
 const CreatePage = () => {
   const [title,setTitle] = useState("")
@@ -21,9 +22,13 @@ const CreatePage = () => {
 
     setLoading(true)
     try{
+
+      const auid = getorcreateUser();
+
       await api.post("/notes",{
         title,
-        content
+        content,
+        authorID: auid
       })
       toast.success("Snippet created successfully!")
       navigate("/")
