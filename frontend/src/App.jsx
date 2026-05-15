@@ -5,6 +5,7 @@ import CreatePage from './pages/CreatePage'
 import NoteDetailPage from './pages/NoteDetailPage'
 import toast from 'react-hot-toast'
 import { getorcreateUser } from './utils/auth'
+import ProfilePage from './pages/ProfilePage'
 
 const App = () => {
   useEffect(() => {
@@ -17,6 +18,7 @@ const App = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="/create" element={<CreatePage />} />
         <Route path="/note/:id" element={<NoteDetailPage />} />
+        <Route path="/profile" element={<ProfilePage />} />
       </Routes>
     </div>
   )

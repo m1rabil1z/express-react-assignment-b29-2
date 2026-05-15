@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router'
-import {PlusIcon} from 'lucide-react'
+import {PlusIcon, UserIcon} from 'lucide-react'
+
 
 const NavBar = () => {
   return (
@@ -13,6 +14,11 @@ const NavBar = () => {
                 <Link to={"/create"} className='btn btn-primary'>
                 <PlusIcon className='size-5'/>
                 <span>New Snippet</span>
+                </Link>
+                <Link to="/profile" className="avatar placeholder btn btn-circle btn-ghost border border-base-content/20 hover:bg-base-content/10 transition-all">
+                    <div className="bg-neutral text-neutral-content rounded-full w-10 h-10 flex items-center justify-center">
+                      <UserIcon className="size-5 text-gray-400" />
+                    </div>
                 </Link>
             </div>
 
