@@ -87,7 +87,7 @@ const CreatePage = () => {
 
                 <div className='card-actions justify-end'>
                   <button type="submit" className='btn btn-primary' disabled={loading}>
-                    {loading ? "Creating...": "Create Note"}
+                    {loading ? "Creating...": "Create Snippet"}
                   </button>
                 </div>
               </form>
